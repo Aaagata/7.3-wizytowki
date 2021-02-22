@@ -20,6 +20,11 @@ people_list.append(fake_data())
 #dane podstawowe
 for i in people_list:
     print(i)
+@property
+def label_lenght(self):
+    self.label_lenght = len(self.name)+len(self.surname)
+    return self.label_lenght
+
 class BusinessContact(BaseContact):
     def __init__(self, company, job_title, company_phone, *args, **kwargs):
         super().__init__(*args, **kwargs)

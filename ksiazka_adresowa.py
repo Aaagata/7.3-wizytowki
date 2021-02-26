@@ -41,15 +41,15 @@ def fake_data2():
     name, surname = fake.name().split()
     return BusinessContact(name=name, surname=surname, private_mail=fake.email(), company=fake.company(), job_title=fake.job(), company_phone=fake.ssn())
 p1 = BusinessContact(name="Alicja", surname="Walczak", private_mail="aa@o2.pl", company="Budimex", job_title="Dyrektor Finansowy", company_phone="+48221231212")
-p2 = BusinessContact("Olga", "Lipińska", "oo@o2.pl", "TVP", "Reżyser", "+48226424242")
-p3 = BusinessContact("Roman","Bratny", "rr@o2.pl", "PGE","Główny Księgowy", "+48228832211")
-p4 = BusinessContact("Marek","Waszczuk", "mm@o2.pl", "SztormGrupa","CEO", "+48606332211")
-p5 = BusinessContact("Bjork", "Johansson", "bb@o2.pl", "IKEA", "Account Manager", "+4672323456")
+p2 = BusinessContact(name="Olga", surname="Lipińska", private_mail="oo@o2.pl", company="TVP", job_title="Reżyser", company_phone="+48226424242")
+p3 = BusinessContact(name="Roman",surname="Bratny", private_mail="rr@o2.pl", company="PGE",job_title="Główny Księgowy", company_phone="+48228832211")
+p4 = BusinessContact(name="Marek",surname="Waszczuk", private_mail="mm@o2.pl", company="SztormGrupa",job_title="CEO", company_phone="+48606332211")
+p5 = BusinessContact(name="Bjork", surname="Johansson", private_mail="bb@o2.pl", company="IKEA", job_title="Account Manager", company_phone="+4672323456")
 people_list = [p1, p2, p3, p4, p5]
 people_list.append(fake_data2())
 for i in people_list:
     print(i.contact())
-print(p1.fullname())
+print(p3.fullname())
 def create_contacts(rodzaj, ilosc):
     if rodzaj == BusinessContact:
         return [fake_data2() for _ in range(ilosc)]
